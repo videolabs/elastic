@@ -146,7 +146,7 @@ func (s *ClusterHealthService) buildURL() (string, url.Values, error) {
 		params.Set("timeout", s.timeout)
 	}
 	if s.waitForActiveShards != nil {
-		params.Set("wait_for_active_shards", fmt.Sprintf("%v", s.waitForActiveShards))
+		params.Set("wait_for_active_shards", fmt.Sprintf("%d", *s.waitForActiveShards))
 	}
 	if s.waitForNodes != "" {
 		params.Set("wait_for_nodes", s.waitForNodes)
